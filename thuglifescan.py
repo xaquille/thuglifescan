@@ -9,9 +9,9 @@ import mysql.connector
 
 #Database Connected
 db = mysql.connector.connect(
-    host="10.80.10.157",
-    user="aradyka",
-    passwd="jancokasu",
+    host="localhost",
+    user="root",
+    passwd="toor",
     database="nmap_report"
 )
 if db.is_connected():
