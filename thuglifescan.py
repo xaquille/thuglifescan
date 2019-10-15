@@ -121,26 +121,16 @@ for d in div:
                         link_db = "https://www.exploit-db.com/raw/"+str(link_id)
                         desc = (id["description"][1]).replace('&#039;', "'").replace('&lt;','<')
 
-
-                        # db = mysql.connector.connect(
-                        #     host="localhost",
-                        #     user="root",
-                        #     passwd="jancok",
-                        #     database="scan_va"
-                        # )
-                        # if db.is_connected():
-                        #     print("db connect bro")
                         cursor = db.cursor()
                         sql = """INSERT INTO ip (ip_address, port, product, version, title, link) VALUES (%s, %s, %s, %s, %s, %s)"""
                         values = (li_ip.strip(), port, product, version, desc, link_db)
 
-                        # for val in values:
                         cursor.execute(sql, values)
                         db.commit()
 
                         print("{} data ditambahkan".format(len(values)))
                        
-                    # print('\n')
+                    
                     print ("*" * 60)
                     print('\n')
 
