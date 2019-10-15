@@ -28,9 +28,7 @@
   <div class="wrapper-main">
     <header class="header">
 
-      <!-- <div class="brand">
-        <a href="#"><img class="logo" alt="ThugLife" src="thuglife.png" width="90" height="90"></a>
-      </div> -->
+      
 
       <div class="header-title">
       </div>
@@ -62,9 +60,9 @@
 
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "jancok";
-$dbname = "thuglifescan";
+$username = "userDB";
+$password = "Passdb";
+$dbname = "nmap_report";
 
 
 
@@ -80,11 +78,9 @@ $totalData = "SELECT count(*) from nmap left join ip on ip.ip_address = ip and i
 $result_totaldata = mysqli_query($conn, $totalData);
 
 
-
-// $sql = "SELECT * FROM nmap";
 $sql = "SELECT nmap.*, ip.title, ip.link from nmap LEFT JOIN ip On ip.ip_address = ip and  ip.port=nmap.port;";
 $result = mysqli_query($conn, $sql);
-// $suck = mysqli_query($conn, $fuck);
+
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
